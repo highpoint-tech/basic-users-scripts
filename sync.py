@@ -15,7 +15,11 @@ import urlparse
 Config = ConfigParser.ConfigParser()
 Config.read(os.path.dirname(os.path.abspath(__file__))+'/config.ini')
 
-logging.basicConfig(filename=Config.get('logs', 'filename'), level=logging.DEBUG)
+logging.basicConfig(
+    filename=Config.get('logs', 'filename'),
+    format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S',
+    level=logging.DEBUG)
 
 filePath = os.path.realpath(Config.get('output', 'file'))
 
