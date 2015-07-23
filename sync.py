@@ -13,7 +13,7 @@ import time
 import urlparse
 
 Config = ConfigParser.ConfigParser()
-Config.read('config.ini')
+Config.read(os.path.dirname(os.path.abspath(__file__))+'/config.ini')
 
 logging.basicConfig(filename=Config.get('logs', 'filename'), level=logging.DEBUG)
 
@@ -41,6 +41,7 @@ def wait():
 while True:
 
     try:
+        logging.debug('Start circle...')
         r = callHome()
         response = r.read()
 
