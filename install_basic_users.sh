@@ -20,12 +20,13 @@ if [ -z "$BASIC_USERS_API_KEY" ]
 fi
 
 DESTINATION="/opt/basic-users"
+BRANCH="master"
 
 
 mkdir -p ${DESTINATION}
-cd ${DESTINATION} && curl -L https://github.com/hp-mobile/basic-users-scripts/tarball/master -o master.tar.gz
-cd ${DESTINATION} && tar xzvf master.tar.gz --strip-components=1
-rm ${DESTINATION}/master.tar.gz
+cd ${DESTINATION} && curl -L https://github.com/hp-mobile/basic-users-scripts/tarball/${BRANCH} -o ${BRANCH}.tar.gz
+cd ${DESTINATION} && tar xzvf ${BRANCH}.tar.gz --strip-components=1
+rm ${DESTINATION}/${BRANCH}.tar.gz
 
 
 cat ${DESTINATION}/config.ini | sed -e "s/id =/id = ${BASIC_USERS_API_ID}/" > ${DESTINATION}/config_temp.ini
