@@ -37,7 +37,7 @@ mv ${DESTINATION}/config_temp.ini ${DESTINATION}/config.ini
 
 
 mv ${DESTINATION}/basic-users-upstart.conf /etc/init/basic-users-upstart.conf
-service basic-users-upstart start
+start basic-users-upstart
 
 
 echo ""
