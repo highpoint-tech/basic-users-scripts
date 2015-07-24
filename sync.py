@@ -51,7 +51,7 @@ while True:
 
         # If response was not successful because of
         # an invalid API ID/Key, clear the file
-        if r.status == 404:
+        if r.status == 403:
             logging.debug('Invalid credentials, clearing file')
 
             file = open(filePath, 'w')
