@@ -24,7 +24,7 @@ BRANCH="master"
 
 
 mkdir -p ${DESTINATION}
-cd ${DESTINATION} && curl -L https://github.com/hp-mobile/basic-users-scripts/tarball/${BRANCH} -o ${BRANCH}.tar.gz
+cd ${DESTINATION} && curl -L https://github.com/highpoint-tech/basic-users-scripts/tarball/${BRANCH} -o ${BRANCH}.tar.gz
 cd ${DESTINATION} && tar xzvf ${BRANCH}.tar.gz --strip-components=1
 rm ${DESTINATION}/${BRANCH}.tar.gz
 
